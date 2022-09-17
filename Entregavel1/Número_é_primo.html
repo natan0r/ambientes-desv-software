@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <title>Número é primo</title>
+<body>
+    Número para teste: <input id="num" type="number"><br>
+
+    <button onclick="primo()">Testar</button><br>
+    
+    resultado: <div id="resposta"></div>
+</body>
+</html>
+
+<script>
+    function primo() {
+        let numero = parseInt(document.getElementById('num').value);
+        let resposta = document.getElementById('resposta');
+        let divisores = 0;
+
+        for(let count = 1; count <= numero; count++) 
+        if(numero % count == 0)
+            divisores++;
+        
+        if(divisores == 2)
+            resposta.innerHTML = "É primo";
+        else
+            resposta.innerHTML = "Não é primo";
+    }
+</script>

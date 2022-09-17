@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <title>Fibonacci</title>
+    <body>
+        <input type="fib" id="fibo">
+        <input type="button" id="btnEnter" value="Enter" onclick="fibonacci_series(fibo.value)">
+
+        <p id="output"></p>
+        <p id="demo"></p>
+    </body>
+</html>
+
+<script>
+    let fibonacci_series = function(num) {
+
+        if(num == 1){
+            let loop = [0, 1];
+            document.getElementById("output").innerHTML = loop;
+            return loop;
+
+        } else {
+            let next = fibonacci_series(num - 1);
+            next.push(next[next.length - 1] + next[next.length - 2]);
+            document.getElementById("output").innerHTML = next;
+            return next;
+            
+        }
+    }
+</script>
